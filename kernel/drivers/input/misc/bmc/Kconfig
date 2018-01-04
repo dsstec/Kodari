@@ -1,0 +1,29 @@
+config SENSORS_BMA250
+	tristate "BMA250 Acceleration Sensor Driver"
+	depends on I2C
+	help
+	 BMA250 Acceleration Sensor Driver implemented by Bosch-Sensortec.
+
+choice 
+	prompt "Select KODARI type"
+	depends on SENSORS_BMA250
+ 
+config BMA250_KODARI_HANDSET
+	bool "BMA250 set parameters for KODARI HANDSET"
+	depends on SENSORS_BMA250 && KODARI_TYPE_MOBILE
+	help
+	 BMA250 parameters.
+
+
+config BMA250_KODARI_CARSET
+	bool "BMA250 set parameters for KODARI CARSET"
+	depends on SENSORS_BMA250 && KODARI_TYPE_CAR
+	help
+	 BMA250 parameters.
+endchoice
+
+config SENSORS_BMM050
+	tristate "BMM050 Magnetic Sensor Driver"
+	depends on I2C
+	help
+	 BMM050 Magnetic Sensor Driver implemented by Bosch-Sensortec.

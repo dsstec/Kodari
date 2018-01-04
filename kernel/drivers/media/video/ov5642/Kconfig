@@ -1,0 +1,11 @@
+config VIDEO_OV5642
+	tristate "OmniVision OV5642 CMOS Sensor"
+	depends on VIDEO_V4L2 && I2C
+	---help---
+	  Support for the OmniVision OV5642 CMOS Sensor.
+
+config VIDEO_OV5640_AUTO_FOCUS
+	tristate "Auto Focus of the OmniVision OV5640 CMOS Sensor"
+	depends on VIDEO_OV5642
+	---help---
+	  Support for Auto Focus of the OmniVision OV5640 CMOS Sensor.

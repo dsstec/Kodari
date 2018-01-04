@@ -1,0 +1,121 @@
+/* linux/arch/arm/mach-exynos/include/mach/gpio-kodari.h
+ *
+ * Copyright (c) 2010-2011 Samsung Electronics Co., Ltd.
+ *		http://www.samsung.com
+ *
+ * EXYNOS4 - MIDAS GPIO lib
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+*/
+
+#ifndef __ASM_ARCH_GPIO_KODARI_H
+#define __ASM_ARCH_GPIO_KODARI_H __FILE__
+#include <mach/gpio.h>
+
+//extern void kodari_config_gpio_table(void);
+//extern void kodari_config_sleep_gpio_table(void);
+
+#define GPIO_WIPE_EN_H				EXYNOS4_GPX0(0) 
+
+
+#define GPIO_TOUCH_INT				EXYNOS4_GPX0(1) 
+#define GPIO_TOUCH_IRQ				IRQ_EINT(1)
+#define GPIO_TOUCH_nRST_L			EXYNOS4_GPX0(4) 
+
+#define GPIO_ETH_INT				EXYNOS4_GPX2(4) 
+#define GPIO_ETH_IRQ				IRQ_EINT(20)
+
+#define GPIO_5V_EN_H				EXYNOS4_GPX0(3) 
+#define GPIO_BLUETOOTH_EN_H			EXYNOS4_GPX0(2) 
+
+#define GPIO_BLUETOOTH_WAKEUP          EXYNOS4_GPX1(5)
+#define GPIO_BLUETOOTH_WAKEUP_IRQ IRQ_EINT(13)
+
+#ifdef CONFIG_KODARI_USB_HUB_SEPARATE
+#define GPIO_USB_HUB_1_nRST_H		EXYNOS4_GPL2(6)
+#define GPIO_USB_HUB_2_nRST_H		EXYNOS4_GPL2(5)
+#else
+#define GPIO_USB_HUB_1_2_nRST_H		EXYNOS4_GPX0(5)
+#endif
+#define GPIO_GPS_nRST_H				EXYNOS4_GPX0(7) 
+
+//key metrix
+//#define GPIO_BACK_KEY_L				EXYNOS4_GPX1(1) 
+#define GPIO_CAMERA_IO_IN			EXYNOS4_GPX1(2) 
+#define GPIO_POWER_KEY				EXYNOS4_GPX1(3) 
+#define GPIO_MENU_KEY				EXYNOS4_GPX1(7)
+
+#define GPIO_ETHERNET_INT			EXYNOS4_GPX2(4) 
+#define GPIO_ETHERNET_IRQ			IRQ_EINT(20)
+#ifdef CONFIG_KODARI_ETHERNET_WOL
+#define GPIO_ETHERNET_PME			EXYNOS4_GPX2(5)
+#define GPIO_ETHERNET_PME_IRQ		IRQ_EINT(21)
+#endif
+#define GPIO_ETHERNET_nRST_L		EXYNOS4_GPX1(0) //EXYNOS4212_GPM3(4)
+#define GPIO_DCJACK_IN			EXYNOS4_GPX2(6) 
+
+#define GPIO_WIFI_EN_L				EXYNOS4_GPK2(2)
+
+#define GPIO_EAR_JACT_DET			EXYNOS4_GPX3(0)
+#define GPIO_UART2_DETECT                EXYNOS4_GPX2(7)
+
+#define GPIO_PMIC_INT				EXYNOS4_GPX3(2)
+#define GPIO_PMIC_IRQ				IRQ_EINT(26)
+#define GPIO_PMIC_BUCK_EN_H			EXYNOS4_GPY2(0)
+#define GPIO_PMIC_LDO18_BUCK9_EN_H	EXYNOS4_GPK0(2)
+#define GPIO_PMIC_LDO23_4_EN_H		EXYNOS4_GPK0(2)
+#define GPIO_PMIC_DS2				EXYNOS4_GPL0(0)
+#define GPIO_PMIC_DS3				EXYNOS4_GPL0(1)
+#define GPIO_PMIC_DS4				EXYNOS4_GPL0(2)
+#define GPIO_PMIC_DVS1				EXYNOS4_GPL0(3)
+#define GPIO_PMIC_DVS2				EXYNOS4_GPL0(4)
+#define GPIO_PMIC_DVS3				EXYNOS4_GPL0(6)
+
+#define GPIO_HDMI_CEC				EXYNOS4_GPX3(6)
+#define GPIO_HDMI_DETECT			EXYNOS4_GPX3(7)
+#define GPIO_HDMI_nRST_L			EXYNOS4212_GPM4(1)
+
+#define GPIO_MSATA_WRITE_PROTECT_L	EXYNOS4212_GPM4(2)
+#define GPIO_MSATA_SECURE_ERASE_L	EXYNOS4212_GPM4(3)
+
+#define GPIO_VIBRATOR_EN			EXYNOS4_GPC0(0)
+#define GPIO_LVDS_nRST_L			EXYNOS4_GPC0(1)
+#define GPIO_BUZZER_PWM				EXYNOS4_GPD0(0)
+#define GPIO_LCD_PWM				EXYNOS4_GPD0(1)
+#define GPIO_UART0_RXD				EXYNOS4_GPA0(0)
+#define GPIO_CAM_MCLK				EXYNOS4212_GPJ1(3)
+#define GPIO_CAM_nRST_L				EXYNOS4212_GPM4(4)
+#define GPIO_CAM_POWER_DOWN_H		EXYNOS4212_GPM4(5)
+#if defined(CONFIG_KODARI_TYPE_CAR)
+#define GPIO_BACKLIGHT_POWER_EN		EXYNOS4212_GPM4(6)
+#endif
+
+#ifdef CONFIG_KODARI_USB_HUB_SEPARATE
+#define GPIO_HUB1_3V3_EN_H		EXYNOS4_GPX1(4)
+#define GPIO_HUB2_3V3_EN_H		EXYNOS4_GPX0(5)
+#else
+#define GPIO_HUB1_3V3_EN_H		EXYNOS4_GPL2(5)
+#endif
+
+#ifdef CONFIG_KODARI_USB_HUB_SEPARATE
+#define GPIO_SATA_PWR_EN_H		EXYNOS4_GPX0(6)
+#else
+#define GPIO_SATA_PWR_EN_H		EXYNOS4_GPL2(6)
+#endif
+#define GPIO_SATA_nRST_H			EXYNOS4_GPL2(2)
+#define GPIO_SATA_IO_DETECT        EXYNOS4_GPX3(5)
+//#define GPIO_EXYNOS_ALIVE_H		EXYNOS4_GPX0(6)
+
+#define GPIO_OTG_EN_H		EXYNOS4_GPL2(3)
+
+#define GPIO_MICOM_INT				EXYNOS4_GPX2(1)
+#define GPIO_MICOM_IRQ				IRQ_EINT(17)
+
+
+
+
+
+
+#endif /* __ASM_ARCH_GPIO_KODARI_H */

@@ -1,0 +1,1 @@
+obj-$(CONFIG_VIDEO_OV5642) += ov5642.o
